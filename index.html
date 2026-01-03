@@ -7,7 +7,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, provident!
+    <div class="container">
+        <h1>Online Voting System</h1>
+        <p>Developed By team Akatsuki</p>
+        <button class="refresh-button" onclick="location.reload()">Refresh</button>
+        <div class="form">
+            <label for="name">Candidate Information :</label>
+            <input type="text" id="name" placeholder="enter your name">
+            <div class="Candidates">
+                <h4>Nominated Parties:</h4>
+                <div class="Candidate">
+                    <input type="radio" name="Candidate" value="BJP" id="candidate1">
+                    <label for="candidate1">BJP</label>
+                </div>
+                <div class="Candidate">
+                    <input type="radio" name="Candidate" value="Congress" id="candidate2">
+                    <label for="candidate2">Congress</label>
+                </div>
+                <div class="Candidate">
+                    <input type="radio" name="Candidate" value="Other" id="candidate3">
+                    <label for="candidate3">BJP</label>
+                </div>
+            </div>
+            <button onclick="vote()">Vote</button>
+            <button onclick="calculateVotes()">Calculate Votes</button>
+        </div>
+        <div id="message"></div>
+        <div id="result"></div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
