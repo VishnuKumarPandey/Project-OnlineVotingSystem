@@ -1,4 +1,19 @@
-body{
-    margin: 0;
-    padding: 0;
+.container{
+    max-width: 600px;
+    margin: 0 auto;
+    color: white;
+    background-color: #003c6e;
+    padding: 20px;
+    border: 2px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+}
+h1, h2{
+    text-align: center;
+    margin-top: 0;
+    font-family: 'Poetsen One', sans-serif;
+    color: #ff33ff;
+    -webkit-text-stroke: 1px #ffffff;
+
 }
