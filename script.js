@@ -1,21 +1,33 @@
 let votes = {};
 
 function vote() {
-    const name = document.getElementById('name').value;
+    const name = document.getElementById('name').value.trim(); 
     const selectedCandidate = document.querySelector('input[name="Candidate"]:checked');
     const messageDiv = document.getElementById('message');
 
+    
     if (!name || !selectedCandidate) {
         messageDiv.innerHTML = "<p style='color: yellow;'>Error: Enter your name and select the party!</p>";
         return;
     }
 
+    
+    if (votes[name]) {
+        messageDiv.innerHTML = `<p style='color: #f48d64ff;'>Error: ${name}, you have already cast your vote!</p>`;
+        document.getElementById('name').value = ""; 
+        selectedCandidate.checked = false; 
+        return; 
+    }
+
+   
     votes[name] = selectedCandidate.value;
     messageDiv.innerHTML = `<p style='color: #dfe4dfff;'>Thank You ${name}! Your Vote has been recorded.</p>`;
-    
+
     document.getElementById('name').value = "";
     selectedCandidate.checked = false;
 }
+
+
 
 function calculateVotes() {
     const resultDiv = document.getElementById('result');
