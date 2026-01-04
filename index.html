@@ -8,33 +8,83 @@
 </head>
 <body>
     <div class="container">
-        <h1>Online Voting System</h1>
-        <p>Developed By Team Akatsuki</p>
-        <button class="refresh-button" onclick="location.reload()">Refresh</button>
-        <div class="form">
-            <label for="name">Candidate Information :</label>
-            <input type="text" id="name" placeholder="enter your name">
-            <div class="Candidates">
-                <h4>Nominated Parties:</h4>
-                <div class="Candidate">
-                    <input type="radio" name="Candidate" value="BJP" id="candidate1">
-                    <label for="candidate1">BJP</label>
-                </div>
-                <div class="Candidate">
-                    <input type="radio" name="Candidate" value="Congress" id="candidate2">
-                    <label for="candidate2">Congress</label>
-                </div>
-                <div class="Candidate">
-                    <input type="radio" name="Candidate" value="Other" id="candidate3">
-                    <label for="candidate3">Other</label>
-                </div>
+    <h1>Online Voting System</h1>
+    <p style="text-align: center;">Developed By Team Akatsuki</p>
+    <button class="refresh-button" onclick="location.reload()">Refresh</button>
+    
+    <div class="form">
+        <label for="name">Voter Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        
+        <h4>Nominated Parties:</h4>
+        <div class="Candidates">
+            <div class="Candidate">
+                <input type="radio" name="Candidate" value="BJP" id="candidate1">
+                <label for="candidate1">
+                    <img src="./images/bjp.jpeg" alt="BJP">
+                    <span>BJP</span>
+                </label>
             </div>
-            <button onclick="vote()">Vote</button>
-            <button onclick="calculateVotes()">Calculate Votes</button>
+            <div class="Candidate">
+                <input type="radio" name="Candidate" value="Congress" id="candidate2">
+                <label for="candidate2">
+                    <img src="./images/Congress.jpeg" alt="Congress">
+                    <span>Congress</span>
+                </label>
+            </div>
+            <div class="Candidate">
+                <input type="radio" name="Candidate" value="BSP" id="candidate3">
+                <label for="candidate3">
+                    <img src="./images/BSP.jpeg" alt="BSP">
+                    <span>BSP</span>
+                </label>
+            </div>
+            <div class="Candidate">
+                <input type="radio" name="Candidate" value="Samajwadi" id="candidate4">
+                <label for="candidate4">
+                    <img src="./images/Samajwadi.jpeg" alt="Samajwadi">
+                    <span>Samajwadi</span>
+                </label>
+            </div>
+            <div class="Candidate">
+                <input type="radio" name="Candidate" value="CPI" id="candidate5">
+                <label for="candidate5">
+                    <img src="./images/CPI.jpeg" alt="CPI">
+                    <span>CPI</span>
+                </label>
+            </div>
+            <div class="Candidate">
+                <input type="radio" name="Candidate" value="AITC" id="candidate6">
+                <label for="candidate6">
+                    <img src="./images/AITC.jpeg" alt="AITC">
+                    <span>AITC</span>
+                </label>
+            </div>
+            <div class="Candidate">
+                <input type="radio" name="Candidate" value="AAP" id="candidate7">
+                <label for="candidate7">
+                    <img src="./images/AAP.jpeg" alt="AAP">
+                    <span>AAP</span>
+                </label>
+            </div>
+            <div class="Candidate">
+                <input type="radio" name="Candidate" value="JDU" id="candidate8">
+                <label for="candidate8">
+                    <img src="./images/JDU.jpeg" alt="JDU">
+                    <span>JDU</span>
+                </label>
+            </div>
         </div>
-        <div id="message"></div>
-        <div id="result"></div>
+
+        <div class="buttons">
+            <button class="vote-btn" onclick="vote()">Vote</button>
+            <button class="res-btn" onclick="calculateVotes()">Calculate Votes</button>
+        </div>
     </div>
-    <script src="script.js"></script>
+    <div id="message"></div>
+    <div id="result"></div>
+
+</div>
+<script src="script.js"></script>
 </body>
 </html>
