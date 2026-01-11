@@ -23,11 +23,11 @@ function login() {
         email: voterEmail
     };
 
-    // UI Switch
+    
     document.getElementById('login-container').style.display = 'none';
     document.getElementById('voting-container').style.display = 'block';
 
-    // Auto-fill name in voting form and make it readonly
+    
     const nameInput = document.getElementById('name');
     nameInput.value = voterName;
     nameInput.readOnly = true; 
@@ -45,17 +45,17 @@ function vote() {
         return;
     }
 
-    // Check if already voted
+    
     if (votes[loggedInVoter.id]) {
         messageDiv.innerHTML = `<p style='color: #f48d64;'>Error: ${loggedInVoter.name}, you have already cast your vote!</p>`;
         return;
     }
 
-    // Record Vote
+    
     votes[loggedInVoter.id] = selectedCandidate.value;
     messageDiv.innerHTML = `<p style='color: #dfe4df;'>Processing your vote...</p>`;
     
-    // Disable button to prevent double clicks during EmailJS call
+    
     voteBtn.disabled = true;
 
     sendEmailConfirmation(loggedInVoter.email, selectedCandidate.value, loggedInVoter.name);
