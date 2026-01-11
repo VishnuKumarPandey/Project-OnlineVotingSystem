@@ -3,88 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login - Online Voting System</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-    <h1>Online Voting System</h1>
-    <p style="text-align: center;">Developed By Team Akatsuki</p>
-    <button class="refresh-button" onclick="location.reload()">Refresh</button>
-    
-    <div class="form">
-        <label for="name">Voter Name:</label>
-        <input type="text" id="name" placeholder="Enter your name">
+    <div class="container" id="login-container">
+        <h1>Voter Login</h1>
+        <p style="text-align: center;">Enter your details to continue</p>
         
-        <h4>Nominated Parties:</h4>
-        <div class="Candidates">
-            <div class="Candidate">
-                <input type="radio" name="Candidate" value="BJP" id="candidate1">
-                <label for="candidate1">
-                    <img src="./images/bjp.jpeg" alt="BJP">
-                    <span>BJP</span>
-                </label>
-            </div>
-            <div class="Candidate">
-                <input type="radio" name="Candidate" value="Congress" id="candidate2">
-                <label for="candidate2">
-                    <img src="./images/Congress.jpeg" alt="Congress">
-                    <span>Congress</span>
-                </label>
-            </div>
-            <div class="Candidate">
-                <input type="radio" name="Candidate" value="BSP" id="candidate3">
-                <label for="candidate3">
-                    <img src="./images/BSP.jpeg" alt="BSP">
-                    <span>BSP</span>
-                </label>
-            </div>
-            <div class="Candidate">
-                <input type="radio" name="Candidate" value="Samajwadi" id="candidate4">
-                <label for="candidate4">
-                    <img src="./images/Samajwadi.jpeg" alt="Samajwadi">
-                    <span>Samajwadi</span>
-                </label>
-            </div>
-            <div class="Candidate">
-                <input type="radio" name="Candidate" value="CPI" id="candidate5">
-                <label for="candidate5">
-                    <img src="./images/CPI.jpeg" alt="CPI">
-                    <span>CPI</span>
-                </label>
-            </div>
-            <div class="Candidate">
-                <input type="radio" name="Candidate" value="AITC" id="candidate6">
-                <label for="candidate6">
-                    <img src="./images/AITC.jpeg" alt="AITC">
-                    <span>AITC</span>
-                </label>
-            </div>
-            <div class="Candidate">
-                <input type="radio" name="Candidate" value="AAP" id="candidate7">
-                <label for="candidate7">
-                    <img src="./images/AAP.jpeg" alt="AAP">
-                    <span>AAP</span>
-                </label>
-            </div>
-            <div class="Candidate">
-                <input type="radio" name="Candidate" value="JDU" id="candidate8">
-                <label for="candidate8">
-                    <img src="./images/JDU.jpeg" alt="JDU">
-                    <span>JDU</span>
-                </label>
-            </div>
-        </div>
+        <div class="form">
+            <label for="voterId">Voter ID:</label>
+            <input type="text" id="voterId" placeholder="Enter your Voter ID">
 
-        <div class="buttons">
-            <button class="vote-btn" onclick="vote()">Vote</button>
-            <button class="res-btn" onclick="calculateVotes()">Calculate Votes</button>
+            <label for="voterName">Name:</label>
+            <input type="text" id="voterName" placeholder="Enter your Name">
+
+            <label for="voterEmail">Email:</label>
+            <input type="email" id="voterEmail" placeholder="Enter your Email">
+
+            <div class="buttons">
+                <button class="login-btn" onclick="login()">Login</button>
+            </div>
         </div>
+        <div id="login-message"></div>
     </div>
-    <div id="message"></div>
-    <div id="result"></div>
+    
+    <div class="container" id="voting-container" style="display: none;">
+        <h1>Online Voting System</h1>
+        <p style="text-align: center;">Developed By Team Akatsuki</p>
+        <button class="refresh-button" onclick="location.reload()">Refresh</button>
+        
+        <div class="form">
+            <label for="name">Voter Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+            
+            <h4>Nominated Parties:</h4>
+            <div class="Candidates">
+                <div class="Candidate">
+                    <input type="radio" name="Candidate" value="BJP" id="candidate1">
+                    <label for="candidate1">
+                        <img src="./images/bjp.jpeg" alt="BJP">
+                        <span>BJP</span>
+                    </label>
+                </div>
+                <div class="Candidate">
+                    <input type="radio" name="Candidate" value="Congress" id="candidate2">
+                    <label for="candidate2">
+                        <img src="./images/Congress.jpeg" alt="Congress">
+                        <span>Congress</span>
+                    </label>
+                </div>
+                <div class="Candidate">
+                    <input type="radio" name="Candidate" value="BSP" id="candidate3">
+                    <label for="candidate3">
+                        <img src="./images/BSP.jpeg" alt="BSP">
+                        <span>BSP</span>
+                    </label>
+                </div>
+                <div class="Candidate">
+                    <input type="radio" name="Candidate" value="Samajwadi" id="candidate4">
+                    <label for="candidate4">
+                        <img src="./images/Samajwadi.jpeg" alt="Samajwadi">
+                        <span>Samajwadi</span>
+                    </label>
+                </div>
+                <div class="Candidate">
+                    <input type="radio" name="Candidate" value="CPI" id="candidate5">
+                    <label for="candidate5">
+                        <img src="./images/CPI.jpeg" alt="CPI">
+                        <span>CPI</span>
+                    </label>
+                </div>
+                <div class="Candidate">
+                    <input type="radio" name="Candidate" value="AITC" id="candidate6">
+                    <label for="candidate6">
+                        <img src="./images/AITC.jpeg" alt="AITC">
+                        <span>AITC</span>
+                    </label>
+                </div>
+                <div class="Candidate">
+                    <input type="radio" name="Candidate" value="AAP" id="candidate7">
+                    <label for="candidate7">
+                        <img src="./images/AAP.jpeg" alt="AAP">
+                        <span>AAP</span>
+                    </label>
+                </div>
+                <div class="Candidate">
+                    <input type="radio" name="Candidate" value="JDU" id="candidate8">
+                    <label for="candidate8">
+                        <img src="./images/JDU.jpeg" alt="JDU">
+                        <span>JDU</span>
+                    </label>
+                </div>
+            </div>
 
-</div>
+            <div class="buttons">
+                <button class="vote-btn" onclick="vote()">Vote</button>
+                <button class="res-btn" onclick="calculateVotes()">Calculate Votes</button>
+            </div>
+        </div>
+        <div id="message"></div>
+        <div id="result"></div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script type="text/javascript">
+   (function(){
+      
+      emailjs.init("rA12O9Em2Oo3Yz4tP"); 
+   })();
+</script>
+
 <script src="script.js"></script>
 </body>
 </html>

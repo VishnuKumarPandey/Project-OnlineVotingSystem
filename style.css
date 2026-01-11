@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -22,6 +23,52 @@ h1 {
     color: #434141;
     border: 3px solid #3c3838;
 }
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"] {
+    padding: 8px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #3c3838;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+    border-color: #007bff;
+}
+
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    margin: 5px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.login-btn { background-color: #007bff; color: white; }
+.vote-btn { background-color: #28a745; color: white; }
+.res-btn { background-color: #007bff; color: white; }
+.refresh-button { float: right; background-color: #dc3545; color: white; }
+
 
 .Candidates {
     display: grid;
@@ -64,25 +111,12 @@ h1 {
     transform: scale(1.2);
 }
 
+
 .buttons {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
 }
-
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    border: none;
-    margin: 5px;
-}
-
-.vote-btn { background-color: #28a745; color: white; }
-.res-btn { background-color: #007bff; color: white; }
-.refresh-button { float: right; background-color: #dc3545; color: white; }
-
-#message, #result {
+#message, #result, #login-message {
     margin-top: 20px;
     text-align: center;
     font-size: 1.2rem;
