@@ -16,8 +16,7 @@ function login() {
         loginMessage.innerHTML = "<p style='color: yellow;'>Error: Please fill all fields!</p>";
         return;
     }
-
-
+    
     if (!voterEmail.includes('@') || !voterEmail.includes('.')) {
         loginMessage.innerHTML = "<p style='color: yellow;'>Error: Enter a valid email!</p>";
         return;
