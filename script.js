@@ -63,7 +63,7 @@ function vote() {
 
 function calculateVotes() {
     const resultDiv = document.getElementById('result');
-    let voteCounts = { "BJP": 0, "Congress": 0, "BSP": 0, "Samajwadi": 0, "CPI": 0, "AITC": 0, "AAP": 0, "JDU": 0 };
+    let voteCounts = { "BJP": 0, "Congress": 0, "BSP": 0, "Samajwadi": 0, "CPI": 0, "AITC": 0, "AAP": 0, "JDU": 0, "NOTA": 0};
 
     for (let voterId in votes) {
         let party = votes[voterId];

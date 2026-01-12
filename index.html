@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container" id="login-container">
         <h1>Voter Login</h1>
         <p style="text-align: center;">Enter your details to continue</p>
-        
+
         <div class="form">
             <label for="voterId">Voter ID:</label>
             <input type="text" id="voterId" placeholder="Enter your Voter ID">
@@ -32,11 +34,11 @@
         <h1>Online Voting System</h1>
         <p style="text-align: center;">Developed By Team Akatsuki</p>
         <button class="refresh-button" onclick="location.reload()">Refresh</button>
-        
+
         <div class="form">
             <label for="name">Voter Name:</label>
             <input type="text" id="name" placeholder="Enter your name">
-            
+
             <h4>Nominated Parties:</h4>
             <div class="Candidates">
                 <div class="Candidate">
@@ -95,6 +97,12 @@
                         <span>JDU</span>
                     </label>
                 </div>
+                <div class="Candidate">
+                    <input type="radio" name="Candidate" value="NOTA" id="nota">
+                    <label for="nota">
+                        <img src="./images/nota.jpeg" alt="NOTA"> <span>NOTA</span>
+                    </label>
+                </div>
             </div>
 
             <div class="buttons">
@@ -108,13 +116,14 @@
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-<script type="text/javascript">
-   (function(){
-      
-      emailjs.init("rA12O9Em2Oo3Yz4tP"); 
-   })();
-</script>
+    <script type="text/javascript">
+        (function () {
 
-<script src="script.js"></script>
+            emailjs.init("rA12O9Em2Oo3Yz4tP");
+        })();
+    </script>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
