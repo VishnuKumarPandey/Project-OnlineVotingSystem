@@ -1,5 +1,6 @@
-let votes = {};
+let votes = {}; 
 let loggedInVoter = {};
+
 
 function login() {
     const voterId = document.getElementById('voterId').value.trim();
@@ -35,6 +36,29 @@ function login() {
     loginMessage.innerHTML = "";
 }
 
+
+function backToLogin() {
+    
+    document.getElementById('voterId').value = "";
+    document.getElementById('voterName').value = "";
+    document.getElementById('voterEmail').value = "";
+    
+    
+    document.getElementById('message').innerHTML = "";
+    const selectedCandidate = document.querySelector('input[name="Candidate"]:checked');
+    if (selectedCandidate) {
+        selectedCandidate.checked = false;
+    }
+    
+   
+    document.querySelector('.vote-btn').disabled = false;
+
+    
+    document.getElementById('voting-container').style.display = 'none';
+    document.getElementById('login-container').style.display = 'block';
+}
+
+
 function vote() {
     const selectedCandidate = document.querySelector('input[name="Candidate"]:checked');
     const messageDiv = document.getElementById('message');
@@ -55,16 +79,18 @@ function vote() {
     votes[loggedInVoter.id] = selectedCandidate.value;
     messageDiv.innerHTML = `<p style='color: #dfe4df;'>Processing your vote...</p>`;
     
-    
     voteBtn.disabled = true;
+
 
     sendEmailConfirmation(loggedInVoter.email, selectedCandidate.value, loggedInVoter.name);
 }
+
 
 function calculateVotes() {
     const resultDiv = document.getElementById('result');
     let voteCounts = { "BJP": 0, "Congress": 0, "BSP": 0, "Samajwadi": 0, "CPI": 0, "AITC": 0, "AAP": 0, "JDU": 0, "NOTA": 0};
 
+    
     for (let voterId in votes) {
         let party = votes[voterId];
         if (voteCounts.hasOwnProperty(party)) {
@@ -104,6 +130,7 @@ function calculateVotes() {
     resultDiv.innerHTML = resultHTML;
 }
 
+
 function sendEmailConfirmation(email, candidate, name) {
     const templateParams = {
         voter_name: name,
@@ -113,11 +140,10 @@ function sendEmailConfirmation(email, candidate, name) {
 
     emailjs.send('service_4e7dc5y', 'template_33o9eba', templateParams)
         .then(function (response) {
-            document.getElementById('message').innerHTML = `<p style="color: #a1ffb0;">Success! Confirmation sent to ${email}</p>`;
-            document.querySelector('.vote-btn').disabled = false;
+            document.getElementById('message').innerHTML = `<p style="color: #a1ffb0;">Success! Confirmation sent to ${email}. <br><b>Next voter can now login.</b></p>`;
         }, function (error) {
             console.error('FAILED...', error);
-            alert("Email send nahi hua. Service ID ya Template ID check karein.");
+            document.getElementById('message').innerHTML = `<p style="color: #ff4d4d;">Vote Recorded, but Email failed to send.</p>`;
             document.querySelector('.vote-btn').disabled = false;
         });
 }
