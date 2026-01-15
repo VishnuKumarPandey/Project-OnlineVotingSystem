@@ -2,6 +2,8 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -37,7 +39,7 @@ label {
 
 input[type="text"],
 input[type="email"] {
-    padding: 8px 10px;
+    padding: 10px;
     font-size: 16px;
     border-radius: 5px;
     border: 2px solid #3c3838;
@@ -70,9 +72,19 @@ button:hover {
 .refresh-button { float: right; background-color: #dc3545; color: white; }
 
 
+.back-btn { 
+    background-color: #f7f9fa; 
+    color: rgb(19, 18, 18); 
+}
+
+.back-btn:hover {
+    background-color: #495057;
+}
+
+
 .Candidates {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
     gap: 15px;
     margin-top: 20px;
 }
@@ -116,8 +128,16 @@ button:hover {
     text-align: center;
     margin-top: 20px;
 }
+
 #message, #result, #login-message {
     margin-top: 20px;
     text-align: center;
     font-size: 1.2rem;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: white;
+    margin: 20px 0;
 }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Online Voting System</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -33,7 +33,7 @@
     <div class="container" id="voting-container" style="display: none;">
         <h1>Online Voting System</h1>
         <p style="text-align: center;">Developed By Team Akatsuki</p>
-        <button class="refresh-button" onclick="location.reload()">Refresh</button>
+        <button class="refresh-button" onclick="location.reload()">Reset All (Reload)</button>
 
         <div class="form">
             <label for="name">Voter Name:</label>
@@ -77,11 +77,13 @@
                     </label>
                 </div>
                 <div class="Candidate">
-                    <input type="radio" name="Candidate" value="AITC" id="candidate6">
-                    <label for="candidate6">
-                        <img src="./images/AITC.jpeg" alt="AITC">
-                        <span>AITC</span>
-                    </label>
+                    <div class="Candidate">
+                        <input type="radio" name="Candidate" value="AITC" id="candidate6">
+                        <label for="candidate6">
+                            <img src="./images/AITC.jpeg" alt="AITC">
+                            <span>AITC</span>
+                        </label>
+                    </div>
                 </div>
                 <div class="Candidate">
                     <input type="radio" name="Candidate" value="AAP" id="candidate7">
@@ -108,6 +110,7 @@
             <div class="buttons">
                 <button class="vote-btn" onclick="vote()">Vote</button>
                 <button class="res-btn" onclick="calculateVotes()">Calculate Votes</button>
+                <button class="back-btn" onclick="backToLogin()">Logout / New Voter</button>
             </div>
         </div>
         <div id="message"></div>
@@ -118,7 +121,7 @@
 
     <script type="text/javascript">
         (function () {
-
+            
             emailjs.init("rA12O9Em2Oo3Yz4tP");
         })();
     </script>
